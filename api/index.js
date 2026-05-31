@@ -5,7 +5,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname));
+
+// Serve static files from the root directory (parent of api/)
+app.use(express.static(path.join(__dirname, '..')));
 
 // Database connection variables
 let isPostgres = false;
@@ -46,7 +48,8 @@ if (process.env.DATABASE_URL) {
 } else {
   console.log("Connecting to local SQLite database...");
   const sqlite3 = require('sqlite3').verbose();
-  sqliteDb = new sqlite3.Database('reservations.db', (err) => {
+  const dbPath = path.join(__dirname, '..', 'reservations.db');
+  sqliteDb = new sqlite3.Database(dbPath, (err) => {
     if (err) {
       console.error("SQLite opening error: ", err);
       process.exit(1);
