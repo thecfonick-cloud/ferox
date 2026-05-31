@@ -161,7 +161,6 @@ function initSite() {
   initGalleryLightbox();
   initReserveForm();
   initNewsletterForm();
-  initDriveModes();
 }
 
 // ── CUSTOM CURSOR ──────────────────────────────────────────────
@@ -463,11 +462,28 @@ function initTelemetryConsole() {
     card.addEventListener('mouseleave', clearActive);
   });
 
+  // Handle hover and toggle-on-tap for mobile devices
   hotspots.forEach(hot => {
     hot.addEventListener('mouseenter', () => {
       activateSpec(hot.dataset.spec);
     });
     hot.addEventListener('mouseleave', clearActive);
+
+    // Support toggle tap behavior on touch devices
+    hot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isActive = hot.classList.contains('active');
+      if (isActive) {
+        clearActive();
+      } else {
+        activateSpec(hot.dataset.spec);
+      }
+    });
+  });
+
+  // Clear active telemetry states when clicking elsewhere
+  document.addEventListener('click', () => {
+    clearActive();
   });
 }
 
@@ -637,50 +653,12 @@ function handleNewsletter(e) {
   return false;
 }
 
-// ── HUD CONFIG AND INITIAL STATE ──────────────────────────────
-const hudConfig = {
-  comfort: {
-    color: '#00f0ff',
-    glow: 'rgba(0, 240, 255, 0.45)',
-    speedMax: 120,
-    rpmMax: 3500,
-    gMax: 0.8,
-    gMin: 0.0
-  },
-  sport: {
-    color: '#ffb700',
-    glow: 'rgba(255, 183, 0, 0.45)',
-    speedMax: 240,
-    rpmMax: 6500,
-    gMax: 1.4,
-    gMin: 0.0
-  },
-  race: {
-    color: '#ff003c',
-    glow: 'rgba(255, 0, 60, 0.45)',
-    speedMax: 380,
-    rpmMax: 9000,
-    gMax: 2.2,
-    gMin: 0.0
-  },
-  track: {
-    color: '#39ff14',
-    glow: 'rgba(57, 255, 20, 0.45)',
-    speedMax: 470,
-    rpmMax: 11000,
-    gMax: 2.8,
-    gMin: 0.0
-  }
-};
-
-let currentDriveMode = 'comfort';
-
 // ── HUD COUNTER ANIMATION ──────────────────────────────────────
 (function animateHUD() {
   const hudVals = [
-    { el: '.hud-el-1 span', min: 0,    getMax: () => hudConfig[currentDriveMode].speedMax, unit: ' KM/H', speed: 80 },
-    { el: '.hud-el-2 span', min: 1000, getMax: () => hudConfig[currentDriveMode].rpmMax,   unit: '',      speed: 150 },
-    { el: '.hud-el-3 span', min: 0.0,  getMax: () => hudConfig[currentDriveMode].gMax,     unit: 'G',     speed: 70 },
+    { el: '.hud-el-1 span', min: 0,    max: 470,   unit: ' KM/H', speed: 80 },
+    { el: '.hud-el-2 span', min: 1000, max: 11000, unit: '',      speed: 150 },
+    { el: '.hud-el-3 span', min: 0.0,  max: 2.8,   unit: 'G',     speed: 70 },
   ];
 
   hudVals.forEach(hv => {
@@ -691,70 +669,16 @@ let currentDriveMode = 'comfort';
     let direction = 1;
 
     setInterval(() => {
-      const max = hv.getMax();
-      const min = hv.min;
-      
-      if (current > max) {
-        current = max;
-      }
-      
-      current += direction * (max - min) * 0.035;
-      if (current >= max) {
-        current = max;
-        direction = -1;
-      }
-      if (current <= min) {
-        current = min;
-        direction = 1;
-      }
-      
-      const disp = typeof min === 'number' && min % 1 !== 0 || max % 1 !== 0
+      current += direction * (hv.max - hv.min) * 0.03;
+      if (current >= hv.max) direction = -1;
+      if (current <= hv.min) direction = 1;
+      const disp = typeof hv.min === 'number' && hv.min % 1 !== 0 || hv.max % 1 !== 0
         ? current.toFixed(1)
         : Math.round(current).toLocaleString();
       el.textContent = disp + hv.unit;
     }, hv.speed);
   });
 })();
-
-// ── DRIVE MODE SELECTOR INTERACTION ───────────────────────────
-function initDriveModes() {
-  const btns = document.querySelectorAll('.hud-mode-btn');
-  const interior = document.querySelector('.interior-section');
-  const hudEls = document.querySelectorAll('.hud-element');
-  const modeValEl = document.querySelector('.hud-el-4 span');
-
-  if (!btns.length || !interior) return;
-
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const mode = btn.dataset.mode;
-      if (mode === currentDriveMode) return;
-
-      currentDriveMode = mode;
-
-      // Update active button state
-      btns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      // Update CSS variables for live color and glow updates
-      interior.style.setProperty('--hud-color', hudConfig[mode].color);
-      interior.style.setProperty('--hud-glow', hudConfig[mode].glow);
-
-      // Update Mode display value
-      if (modeValEl) {
-        modeValEl.textContent = mode.toUpperCase();
-      }
-
-      // Trigger diagnostic glitch animation
-      hudEls.forEach(el => {
-        el.classList.add('glitch');
-        setTimeout(() => {
-          el.classList.remove('glitch');
-        }, 400);
-      });
-    });
-  });
-}
 
 // ── SMOOTH ANCHOR SCROLL ───────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
