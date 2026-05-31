@@ -137,7 +137,11 @@ app.get('/api/reservations', (req, res) => {
   }
 });
 
-// Start Express server
-app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
-});
+// Start Express server locally (bypass in Serverless / Vercel runtime)
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
