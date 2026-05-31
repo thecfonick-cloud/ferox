@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ferox-website
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ferox-db
+          property: connectionString
+
+databases:
+  - name: ferox-db
+    plan: free

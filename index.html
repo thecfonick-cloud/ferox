@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FEROX — Born Unconquered | V16 Hypercar</title>
+  <meta name="description" content="FEROX — A naturally aspirated 8.3L V16, 1250HP, 470 KM/H hypercar engineered without compromise. Born Unconquered." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── LOADING SCREEN ── -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <img src="assets/logo.jpg" alt="FEROX" class="loader-crest-logo" />
+      <div class="loader-logo">FEROX</div>
+      <div class="loader-sub">V16 HYPERCAR</div>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loaderBarFill"></div>
+      </div>
+      <div class="loader-percent" id="loaderPercent">0%</div>
+      <div class="loader-tagline">BORN UNCONQUERED</div>
+    </div>
+    <div class="loader-grid"></div>
+    <div class="loader-scanline"></div>
+  </div>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" id="mainNav">
+    <!-- Left: Menu trigger -->
+    <div class="nav-menu-trigger" id="navMenuTrigger">
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <span class="nav-menu-text">MENU</span>
+    </div>
+
+    <!-- Center: Crest Logo -->
+    <a href="#hero" class="nav-center-logo">
+      <img src="assets/logo.jpg" alt="FEROX" class="nav-crest-logo" />
+    </a>
+
+    <!-- Right: Reserve CTA -->
+    <div class="nav-right-actions">
+      <a href="#reserve" class="nav-cta" id="navCta">Reserve</a>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#performance" class="mobile-nav-link">Performance</a></li>
+      <li><a href="#engineering" class="mobile-nav-link">Engineering</a></li>
+      <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+      <li><a href="#interior" class="mobile-nav-link">Interior</a></li>
+      <li><a href="#future" class="mobile-nav-link">Models</a></li>
+      <li><a href="#reserve" class="mobile-nav-link">Reserve</a></li>
+    </ul>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <canvas id="particleCanvas" class="hero-particles"></canvas>
+    <div class="hero-bg">
+      <!-- White front studio shot as main hero -->
+      <img src="assets/car_white_front.jpg" alt="FEROX" class="hero-bg-img" id="heroBgImg" />
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-bg-vignette"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">8.3L NA · V16 · 2026</div>
+      <h1 class="hero-brand" id="heroBrand">
+        <span class="hero-brand-letter" style="--i:0">F</span><span
+        class="hero-brand-letter" style="--i:1">E</span><span
+        class="hero-brand-letter" style="--i:2">R</span><span
+        class="hero-brand-letter" style="--i:3">O</span><span
+        class="hero-brand-letter" style="--i:4">X</span>
+      </h1>
+      <h2 class="hero-model">V16 HYPERCAR</h2>
+      <div class="hero-divider"></div>
+      <p class="hero-tagline">Born Unconquered.</p>
+      <div class="hero-specs-bar">
+        <div class="hero-spec-item">
+          <span class="hero-spec-val">1250</span>
+          <span class="hero-spec-label">HORSEPOWER</span>
+        </div>
+        <div class="hero-spec-divider"></div>
+        <div class="hero-spec-item">
+          <span class="hero-spec-val">V16</span>
+          <span class="hero-spec-label">NATURALLY ASPIRATED</span>
+        </div>
+        <div class="hero-spec-divider"></div>
+        <div class="hero-spec-item">
+          <span class="hero-spec-val">470</span>
+          <span class="hero-spec-label">KM/H TOP SPEED</span>
+        </div>
+      </div>
+      <div class="hero-cta-group">
+        <a href="#reserve" class="btn-primary" id="heroCta1">Reserve Now</a>
+        <a href="#performance" class="btn-ghost" id="heroCta2">Discover More</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="hero-scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+    <div class="hero-light-sweep"></div>
+  </section>
+
+  <!-- ── STATEMENT ── -->
+  <section class="statement-section" id="statement">
+    <div class="statement-inner">
+      <p class="statement-text reveal-text">
+        <span>A purely naturally aspirated machine.</span>
+        <span>Engineered without compromise.</span>
+        <span>Built to dominate.</span>
+      </p>
+    </div>
+    <div class="statement-line"></div>
+  </section>
+
+  <!-- ── PERFORMANCE ── -->
+  <section class="performance-section" id="performance">
+    <div class="section-header">
+      <div class="section-tag">01 — PERFORMANCE</div>
+      <h2 class="section-title reveal-on-scroll">Raw <span class="text-accent">Power.</span><br/>Pure <span class="text-accent">Precision.</span></h2>
+      <p class="section-sub reveal-on-scroll">Every figure is a testament to obsessive engineering. Every number, absolute.</p>
+    </div>
+
+    <div class="perf-cinematic-showcase">
+      <!-- Clean Studio Visual Showcase -->
+      <div class="perf-car-visual">
+        <div class="perf-car-img-wrap">
+          <img src="assets/car_crimson_front.jpg" alt="FEROX Rosso Ferox" class="perf-car-img" id="telemetryCarImg" />
+        </div>
+        <div class="perf-car-glow"></div>
+      </div>
+
+      <!-- Telemetry Specifications List -->
+      <div class="telemetry-specs-list">
+        <!-- 1. 1250+ HORSEPOWER -->
+        <div class="telemetry-spec-card reveal-on-scroll" data-spec="1" style="--delay:0s">
+          <canvas class="speed-lines-canvas"></canvas>
+          <div class="spec-card-glow"></div>
+          <div class="spec-card-sweep"></div>
+          <div class="spec-header">
+            <span class="spec-num">01</span>
+            <span class="spec-category">PROPULSION</span>
+          </div>
+          <div class="spec-main">
+            <div class="spec-value counter-value" data-target="1250" data-suffix="+" data-label="HP">0+</div>
+            <div class="spec-label">HORSEPOWER</div>
+          </div>
+          <div class="spec-desc">Peak output at 10,500 RPM with flat-plane crankshaft dynamics.</div>
+          <div class="spec-pulse-bar"></div>
+        </div>
+
+        <!-- 2. NATURALLY ASPIRATED V16 -->
+        <div class="telemetry-spec-card reveal-on-scroll" data-spec="2" style="--delay:0.05s">
+          <canvas class="speed-lines-canvas"></canvas>
+          <div class="spec-card-glow"></div>
+          <div class="spec-card-sweep"></div>
+          <div class="spec-header">
+            <span class="spec-num">02</span>
+            <span class="spec-category">POWERTRAIN</span>
+          </div>
+          <div class="spec-main">
+            <div class="spec-value-text">V16</div>
+            <div class="spec-label">NATURALLY ASPIRATED</div>
+          </div>
+          <div class="spec-desc">8.3L quad-cam 64-valve custom block. Carbon fiber intake runners.</div>
+          <div class="spec-pulse-bar"></div>
+        </div>
+
+        <!-- 3. 470 KM/H TOP SPEED -->
+        <div class="telemetry-spec-card reveal-on-scroll" data-spec="3" style="--delay:0.1s">
+          <canvas class="speed-lines-canvas"></canvas>
+          <div class="spec-card-glow"></div>
+          <div class="spec-card-sweep"></div>
+          <div class="spec-header">
+            <span class="spec-num">03</span>
+            <span class="spec-category">VELOCITY</span>
+          </div>
+          <div class="spec-main">
+            <div class="spec-value counter-value" data-target="470" data-suffix="" data-label="KM/H">0</div>
+            <div class="spec-label">KM/H TOP SPEED</div>
+          </div>
+          <div class="spec-desc">Drag-limited terminal velocity. Active air channeling stabilization.</div>
+          <div class="spec-pulse-bar"></div>
+        </div>
+
+        <!-- 4. 0–100 KM/H IN 2.3 SECONDS -->
+        <div class="telemetry-spec-card reveal-on-scroll" data-spec="4" style="--delay:0.15s">
+          <canvas class="speed-lines-canvas"></canvas>
+          <div class="spec-card-glow"></div>
+          <div class="spec-card-sweep"></div>
+          <div class="spec-header">
+            <span class="spec-num">04</span>
+            <span class="spec-category">ACCELERATION</span>
+          </div>
+          <div class="spec-main">
+            <div class="spec-value counter-value" data-target="2.3" data-suffix="s" data-label="0-100">0s</div>
+            <div class="spec-label">0–100 KM/H IN 2.3 SECONDS</div>
+          </div>
+          <div class="spec-desc">Dual-clutch lightning transmission. Optimized launch control.</div>
+          <div class="spec-pulse-bar"></div>
+        </div>
+
+        <!-- 5. ACTIVE AERODYNAMICS -->
+        <div class="telemetry-spec-card reveal-on-scroll" data-spec="5" style="--delay:0.2s">
+          <canvas class="speed-lines-canvas"></canvas>
+          <div class="spec-card-glow"></div>
+          <div class="spec-card-sweep"></div>
+          <div class="spec-header">
+            <span class="spec-num">05</span>
+            <span class="spec-category">AERODYNAMICS</span>
+          </div>
+          <div class="spec-main">
+            <div class="spec-value-text">ACTIVE</div>
+            <div class="spec-label">AERODYNAMICS</div>
+          </div>
+          <div class="spec-desc">FEROX Spine wing. Front motor flaps. Over 1,000 kg downforce.</div>
+          <div class="spec-pulse-bar"></div>
+        </div>
+
+        <!-- 6. CARBON MONOCOQUE CHASSIS -->
+        <div class="telemetry-spec-card reveal-on-scroll" data-spec="6" style="--delay:0.25s">
+          <canvas class="speed-lines-canvas"></canvas>
+          <div class="spec-card-glow"></div>
+          <div class="spec-card-sweep"></div>
+          <div class="spec-header">
+            <span class="spec-num">06</span>
+            <span class="spec-category">STRUCTURE</span>
+          </div>
+          <div class="spec-main">
+            <div class="spec-value-text">CARBON</div>
+            <div class="spec-label">MONOCOQUE CHASSIS</div>
+          </div>
+          <div class="spec-desc">Single-shell motorsport composite shell. Torsional rigidity 65,000 Nm/deg.</div>
+          <div class="spec-pulse-bar"></div>
+        </div>
+
+        <!-- 7. TITANIUM EXHAUST SYSTEM -->
+        <div class="telemetry-spec-card reveal-on-scroll" data-spec="7" style="--delay:0.3s">
+          <canvas class="speed-lines-canvas"></canvas>
+          <div class="spec-card-glow"></div>
+          <div class="spec-card-sweep"></div>
+          <div class="spec-header">
+            <span class="spec-num">07</span>
+            <span class="spec-category">ACOUSTICS</span>
+          </div>
+          <div class="spec-main">
+            <div class="spec-value-text">TITANIUM</div>
+            <div class="spec-label">EXHAUST SYSTEM</div>
+          </div>
+          <div class="spec-desc">Central quad outlets. Naturally aspirated V16 high-pitch crescendo.</div>
+          <div class="spec-pulse-bar"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="perf-tech-row">
+      <div class="perf-tech-item reveal-on-scroll" style="--delay:0s">
+        <div class="perf-tech-num">01</div>
+        <h3>Titanium Exhaust</h3>
+        <p>Quad central outlets machined from aerospace-grade titanium. Naturally aspirated symphony at 11,000 RPM redline.</p>
+      </div>
+      <div class="perf-tech-item reveal-on-scroll" style="--delay:0.15s">
+        <div class="perf-tech-num">02</div>
+        <h3>Carbon Monocoque</h3>
+        <p>Full carbon fiber monocoque chassis with integrated roll structure — direct lineage from Formula 1 technology.</p>
+      </div>
+      <div class="perf-tech-item reveal-on-scroll" style="--delay:0.3s">
+        <div class="perf-tech-num">03</div>
+        <h3>Active Aerodynamics</h3>
+        <p>FEROX Spine adaptive rear wing and motorized front elements generate over 1,000 kg downforce at maximum deployment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ENGINEERING / SPLIT VIEW ── -->
+  <section class="engineering-section" id="engineering">
+    <div class="engineering-bg">
+      <div class="blueprint-grid"></div>
+    </div>
+    <div class="engineering-content">
+      <div class="section-header">
+        <div class="section-tag">02 — ENGINEERING</div>
+        <h2 class="section-title reveal-on-scroll">Two Faces.<br/><span class="text-accent">One Soul.</span></h2>
+        <p class="section-sub reveal-on-scroll">The FEROX in Rosso Ferox and Arctic White — every angle engineered with purpose.</p>
+      </div>
+
+      <!-- Split showcase: crimson front top, white rear bottom -->
+      <div class="blueprint-showcase">
+        <div class="blueprint-car-wrap">
+          <!-- Crimson front top half, white rear bottom half -->
+          <div class="split-view reveal-on-scroll">
+            <div class="split-half split-top">
+              <img src="assets/car_crimson_front.jpg" alt="FEROX Rosso Ferox Front" class="split-img split-img-top" />
+              <div class="split-label">ROSSO FEROX · FRONT</div>
+            </div>
+            <div class="split-half split-bottom">
+              <img src="assets/car_white_rear.jpg" alt="FEROX Arctic White Rear" class="split-img split-img-bottom" />
+              <div class="split-label">ARCTIC WHITE · REAR</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blueprint-callouts">
+          <div class="bp-callout reveal-on-scroll" style="--delay:0s">
+            <div class="bp-callout-tag">A</div>
+            <div class="bp-callout-content">
+              <h4>FEROX Spine Wing</h4>
+              <p>Adaptive active rear wing — 3 positions, hydraulic actuation, 0.8s deployment.</p>
+            </div>
+          </div>
+          <div class="bp-callout reveal-on-scroll" style="--delay:0.1s">
+            <div class="bp-callout-tag">B</div>
+            <div class="bp-callout-content">
+              <h4>Skyblade Hardtop</h4>
+              <p>Carbon composite roof with integrated airflow channels reducing turbulence by 23%.</p>
+            </div>
+          </div>
+          <div class="bp-callout reveal-on-scroll" style="--delay:0.2s">
+            <div class="bp-callout-tag">C</div>
+            <div class="bp-callout-content">
+              <h4>Air Channel Brakes</h4>
+              <p>Dedicated airflow ducts feeding 410mm carbon ceramic discs with 6-piston titanium calipers.</p>
+            </div>
+          </div>
+          <div class="bp-callout reveal-on-scroll" style="--delay:0.3s">
+            <div class="bp-callout-tag">D</div>
+            <div class="bp-callout-content">
+              <h4>V16 · 8.3L · 90°</h4>
+              <p>Quad cam, 64 valve, individual throttle bodies. Dry sump. 11,000 RPM redline.</p>
+            </div>
+          </div>
+          <div class="bp-callout reveal-on-scroll" style="--delay:0.4s">
+            <div class="bp-callout-tag">E</div>
+            <div class="bp-callout-content">
+              <h4>Quad Titanium Exhausts</h4>
+              <p>Central-exit configuration. Minimal back pressure. Maximum acoustic drama at full throttle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CINEMATIC STRIP — no image, pure dark ── -->
+  <section class="cinematic-strip" id="cinematicStrip">
+    <div class="strip-inner">
+      <div class="strip-quote reveal-on-scroll">“The V16 doesn’t just accelerate.<br/>It obliterates distance.”</div>
+    </div>
+  </section>
+
+  <!-- ── GALLERY — bento using only the 3 images ── -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-header">
+      <div class="section-tag">03 — GALLERY</div>
+      <h2 class="section-title reveal-on-scroll">The <span class="text-accent">FEROX.</span><br/>Every Angle.</h2>
+    </div>
+
+    <div class="bento-grid">
+      <div class="bento-item reveal-on-scroll" style="--delay:0s" data-lightbox="assets/car_crimson_front.jpg">
+        <img src="assets/car_crimson_front.jpg" alt="FEROX Rosso Ferox Front" loading="lazy" />
+        <div class="bento-overlay"><span>Rosso Ferox · Front Studio</span></div>
+      </div>
+
+      <div class="bento-item reveal-on-scroll" style="--delay:0.12s" data-lightbox="assets/car_crimson_rear.jpg">
+        <img src="assets/car_crimson_rear.jpg" alt="FEROX Rosso Ferox Rear" loading="lazy" />
+        <div class="bento-overlay"><span>Rosso Ferox · Rear Aero</span></div>
+      </div>
+
+      <div class="bento-item reveal-on-scroll" style="--delay:0.24s" data-lightbox="assets/car_white_front.jpg">
+        <img src="assets/car_white_front.jpg" alt="FEROX Arctic White Front" loading="lazy" />
+        <div class="bento-overlay"><span>Arctic White · Front Studio</span></div>
+      </div>
+
+      <div class="bento-item reveal-on-scroll" style="--delay:0.36s" data-lightbox="assets/car_white_rear.jpg">
+        <img src="assets/car_white_rear.jpg" alt="FEROX Arctic White Rear" loading="lazy" />
+        <div class="bento-overlay"><span>Arctic White · Rear Aero</span></div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">✕</button>
+      <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+    </div>
+  </section>
+
+  <!-- ── INTERIOR — using white front as bg ── -->
+  <section class="interior-section" id="interior">
+    <div class="interior-bg">
+      <img src="assets/car_white_rear.jpg" alt="FEROX" class="interior-bg-img" id="interiorBgImg" />
+      <div class="interior-overlay"></div>
+    </div>
+    <div class="interior-content">
+      <div class="section-header">
+        <div class="section-tag">04 — INTERIOR</div>
+        <h2 class="section-title reveal-on-scroll">The <span class="text-accent">Cockpit.</span><br/>Your Command.</h2>
+      </div>
+      <div class="interior-features-grid">
+        <div class="interior-feature reveal-on-scroll" style="--delay:0s">
+          <div class="interior-feature-icon">◈</div>
+          <h3>Fighter Jet HUD</h3>
+          <p>Full digital instrument cluster with configurable race data, G-force monitoring, and lap timing overlays.</p>
+        </div>
+        <div class="interior-feature reveal-on-scroll" style="--delay:0.1s">
+          <div class="interior-feature-icon">◈</div>
+          <h3>Carbon Alcantara</h3>
+          <p>Full carbon fiber cabin with Alcantara headliner, stitched leather seating surfaces, and titanium trim.</p>
+        </div>
+        <div class="interior-feature reveal-on-scroll" style="--delay:0.2s">
+          <div class="interior-feature-icon">◈</div>
+          <h3>FIA Race Harness</h3>
+          <p>Six-point FIA-approved harness with HANS device compatibility. Road legal. Track ready.</p>
+        </div>
+        <div class="interior-feature reveal-on-scroll" style="--delay:0.3s">
+          <div class="interior-feature-icon">◈</div>
+          <h3>4 Drive Modes</h3>
+          <p>Comfort · Sport · Race · Track — each tuning suspension, aerodynamics, traction and power delivery.</p>
+        </div>
+      </div>
+    </div>
+    <div class="interior-hud-elements">
+      <div class="hud-element hud-el-1">SPEED<span>0 KM/H</span></div>
+      <div class="hud-element hud-el-2">RPM<span>0,000</span></div>
+      <div class="hud-element hud-el-3">G-FORCE<span>0.0G</span></div>
+      <div class="hud-element hud-el-4">MODE<span>RACE</span></div>
+    </div>
+  </section>
+
+  <!-- ── FUTURE MODELS ── -->
+  <section class="future-section" id="future">
+    <div class="future-bg-line"></div>
+    <div class="section-header">
+      <div class="section-tag">05 — THE LINEAGE</div>
+      <h2 class="section-title reveal-on-scroll">The <span class="text-accent">FEROX</span><br/>Family.</h2>
+      <p class="section-sub reveal-on-scroll">Beyond the V16. The FEROX universe expands.</p>
+    </div>
+    <div class="future-models-grid">
+      <div class="future-model-card reveal-on-scroll" style="--delay:0s">
+        <div class="future-model-bg">
+          <img src="assets/car_white_front.jpg" alt="FEROX SV" />
+          <div class="future-card-overlay"></div>
+        </div>
+        <div class="future-card-content">
+          <div class="future-card-tag">COMING 2027</div>
+          <h3 class="future-card-name">FEROX SV</h3>
+          <p class="future-card-desc">The ultimate track-only evolution. Stripped. Sharpened. Unstoppable.</p>
+          <div class="future-card-spec">1400+ HP · Extreme Aero Package</div>
+          <a href="#reserve" class="future-card-cta">Register Interest</a>
+        </div>
+      </div>
+      <div class="future-model-card reveal-on-scroll" style="--delay:0.15s">
+        <div class="future-model-bg">
+          <img src="assets/car_crimson_front.jpg" alt="FEROX Tempesta" style="object-position: center;" />
+          <div class="future-card-overlay"></div>
+        </div>
+        <div class="future-card-content">
+          <div class="future-card-tag">COMING 2028</div>
+          <h3 class="future-card-name">Tempesta</h3>
+          <p class="future-card-desc">Grand touring performance. Storm-level velocity with transcontinental comfort.</p>
+          <div class="future-card-spec">V12 · Hybrid · 1050 HP</div>
+          <a href="#reserve" class="future-card-cta">Register Interest</a>
+        </div>
+      </div>
+      <div class="future-model-card reveal-on-scroll" style="--delay:0.3s">
+        <div class="future-model-bg">
+          <img src="assets/car_white_rear.jpg" alt="FEROX Apex Track" />
+          <div class="future-card-overlay"></div>
+        </div>
+        <div class="future-card-content">
+          <div class="future-card-tag">COMING 2027</div>
+          <h3 class="future-card-name">Apex Track</h3>
+          <p class="future-card-desc">The purist's weapon. DRS. Unlimited downforce. Zero compromise.</p>
+          <div class="future-card-spec">Race Only · FIA Compliant</div>
+          <a href="#reserve" class="future-card-cta">Register Interest</a>
+        </div>
+      </div>
+      <div class="future-model-card reveal-on-scroll" style="--delay:0.45s">
+        <div class="future-model-bg">
+          <img src="assets/car_crimson_rear.jpg" alt="FEROX Spyder" style="object-position: center;" />
+          <div class="future-card-overlay"></div>
+        </div>
+        <div class="future-card-content">
+          <div class="future-card-tag">COMING 2029</div>
+          <h3 class="future-card-name">Spyder</h3>
+          <p class="future-card-desc">Open-air V16 theatre. The symphony amplified by the open sky above.</p>
+          <div class="future-card-spec">Roadster · Full V16 · 1250 HP</div>
+          <a href="#reserve" class="future-card-cta">Register Interest</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESERVATION ── -->
+  <section class="reserve-section" id="reserve">
+    <div class="reserve-bg">
+      <img src="assets/car_crimson_rear.jpg" alt="" class="reserve-bg-img" />
+      <div class="reserve-bg-overlay"></div>
+    </div>
+    <div class="reserve-content">
+      <div class="reserve-tag reveal-on-scroll">06 — EXCLUSIVE ACCESS</div>
+      <h2 class="reserve-title reveal-on-scroll">Join the<br/><span class="text-accent">Waiting List.</span></h2>
+      <p class="reserve-subtitle reveal-on-scroll">Become one of the first to experience the future of performance engineering.</p>
+      <div class="reserve-form-wrap reveal-on-scroll" style="--delay:0.2s">
+        <div class="reserve-form-glow"></div>
+        <form class="reserve-form" id="reserveForm" onsubmit="return handleReserve(event)">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="emailAddress">Email Address</label>
+            <input type="email" id="emailAddress" name="emailAddress" placeholder="your@email.com" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="country">Country of Residence</label>
+            <select id="country" name="country">
+              <option value="">Select Country</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>Germany</option>
+              <option>UAE</option>
+              <option>Switzerland</option>
+              <option>Japan</option>
+              <option>Australia</option>
+              <option>India</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <button type="submit" class="reserve-btn" id="reserveBtn">
+            <span class="reserve-btn-text">Reserve Your Position</span>
+            <span class="reserve-btn-arrow">→</span>
+          </button>
+          <p class="reserve-fine-print">Limited production. Priority access reserved for early members.</p>
+        </form>
+        <div class="reserve-success" id="reserveSuccess">
+          <div class="reserve-success-icon">✓</div>
+          <h3>Position Reserved.</h3>
+          <p>Welcome to the FEROX circle. Your reservation has been confirmed. We will be in touch.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-logo">FEROX</div>
+        <p class="footer-tagline-text">Born Unconquered.</p>
+        <p class="footer-desc">FEROX is an independent hypercar manufacturer dedicated to the art of naturally aspirated performance. We build machines without compromise.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram" id="socialInstagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube" id="socialYouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="X" id="socialX">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.261 5.636 5.903-5.636zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="LinkedIn" id="socialLinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Models</h4>
+        <ul>
+          <li><a href="#hero">FEROX</a></li>
+          <li><a href="#future">FEROX SV</a></li>
+          <li><a href="#future">Tempesta</a></li>
+          <li><a href="#future">Apex Track</a></li>
+          <li><a href="#future">Spyder</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About FEROX</a></li>
+          <li><a href="#">Engineering</a></li>
+          <li><a href="#">Design Studio</a></li>
+          <li><a href="#">Press &amp; Media</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-newsletter-col">
+        <h4>Stay in the Circle</h4>
+        <p>Exclusive FEROX updates, reveals, and events — direct to your inbox.</p>
+        <form class="footer-newsletter" onsubmit="return handleNewsletter(event)" id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="Your email address" required />
+          <button type="submit" id="newsletterBtn">→</button>
+        </form>
+        <p class="footer-privacy">By subscribing, you agree to our Privacy Policy.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <span>© 2026 FEROX Automobili. All rights reserved.</span>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <div class="footer-bottom-right">
+        <span>FEROX · V16 · 8.3L · 1250 HP · 470 KM/H</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cursor" id="cursor"></div>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
